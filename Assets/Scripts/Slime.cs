@@ -25,7 +25,7 @@ public class Slime : Character
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Character>().TakeDamage(1);
+            other.gameObject.GetComponent<Character>().TakeDamage(10);
         }
     }
     void TakeTurn()

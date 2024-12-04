@@ -28,9 +28,13 @@ public abstract class Projectile : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-       if (other.gameObject.CompareTag(targetTag))
+        if (other.gameObject.CompareTag(targetTag))
         {
-            other.gameObject.GetComponent<Character>().TakeDamage(damage);
+            Character targetCharacter = other.gameObject.GetComponent<Character>();
+            if (targetCharacter != null)
+            {
+                targetCharacter.TakeDamage(20);  // ลดเลือดศัตรูทีละ 20
+            }
         }
     }
     public void SetTargetTag()
