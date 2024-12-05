@@ -18,17 +18,20 @@ public class Dragon : Character
     void Update()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
-        MoveTowardsPlayer(distanceFromPlayer);
+        Move();
         ShootAtPlayer(distanceFromPlayer);
         FacePlayer();
     }
-    private void MoveTowardsPlayer(float distanceFromPlayer)
+
+    public override void Move()
     {
+        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
     }
+
     private void ShootAtPlayer(float distanceFromPlayer)
     {
         if (distanceFromPlayer < shootingRange && nextFireTime < Time.time)
@@ -51,7 +54,7 @@ public class Dragon : Character
             transform.localScale = new Vector3(1, 1, 1); // หันหน้าศัตรูไปทางขวา
         }
     }
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, lineOfSite);

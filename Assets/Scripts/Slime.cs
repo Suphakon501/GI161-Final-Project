@@ -12,7 +12,7 @@ public class Slime : Character
     {
         Move();
     }
-    void Move()
+    public override void Move()
     {
         distToPoint = Vector2.Distance(transform.position, wayPoint[nextWaypoint].transform.position);
         transform.position = Vector2.MoveTowards(transform.position, wayPoint[nextWaypoint].transform.position, moveSpeed * Time.deltaTime);

@@ -7,10 +7,10 @@ public class FireBallBullet : Projectile
     protected override void Start()
     {
         base.Start();
+        damage = 20; 
         currentSpeed = speed;
-        Debug.Log("is target null " + (targetTransform == null));
+        //Debug.Log("is target null " + (targetTransform == null));
     }
-
     private void Update()
     {
         SetDirection();
@@ -29,5 +29,6 @@ public class FireBallBullet : Projectile
         Vector2 direction = (targetTransform.position - transform.position).normalized;
         rb.velocity = direction * currentSpeed; 
     }
+
 
 }

@@ -9,7 +9,7 @@ public abstract class Projectile : MonoBehaviour
     public float lifetime;
     protected Transform shooterTransform; 
     protected string targetTag;
-    [SerializeField] int damage;
+    [SerializeField] protected int damage;
     protected Transform targetTransform;
     public virtual void SetShooter(Transform shooter)
     {
@@ -33,7 +33,7 @@ public abstract class Projectile : MonoBehaviour
             Character targetCharacter = other.gameObject.GetComponent<Character>();
             if (targetCharacter != null)
             {
-                targetCharacter.TakeDamage(20);  // ลดเลือดศัตรูทีละ 20
+                targetCharacter.TakeDamage(damage);
             }
         }
     }
