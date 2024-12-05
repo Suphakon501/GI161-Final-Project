@@ -22,7 +22,6 @@ public class Dragon : Character
         ShootAtPlayer(distanceFromPlayer);
         FacePlayer();
     }
-
     public override void Move()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
@@ -31,7 +30,6 @@ public class Dragon : Character
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
     }
-
     private void ShootAtPlayer(float distanceFromPlayer)
     {
         if (distanceFromPlayer < shootingRange && nextFireTime < Time.time)

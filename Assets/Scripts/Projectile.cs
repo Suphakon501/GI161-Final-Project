@@ -35,6 +35,7 @@ public abstract class Projectile : MonoBehaviour
             {
                 targetCharacter.TakeDamage(damage);
             }
+            Destroy(gameObject);
         }
     }
     public void SetTargetTag()
