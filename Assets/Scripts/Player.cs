@@ -69,10 +69,10 @@ public class Player : Character
     }
     public void ApplyPotion(float speedMultiplier, float duration)
     {
-        StartCoroutine(SpeedBoostCoroutine(speedMultiplier, duration));
+        StartCoroutine(SpeedBoost(speedMultiplier, duration));
     }
 
-    private IEnumerator SpeedBoostCoroutine(float speedMultiplier, float duration)
+    private IEnumerator SpeedBoost(float speedMultiplier, float duration)
     {
         moveSpeed *= speedMultiplier; 
         yield return new WaitForSeconds(duration); 
