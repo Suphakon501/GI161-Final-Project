@@ -62,7 +62,7 @@ public class Player : Character
         }
         shootCounter -= Time.deltaTime;
     }
-    void OnCollisionEnter2D(Collision2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         anim.SetBool("jump", false);
         jump = 0;

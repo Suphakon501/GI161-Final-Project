@@ -7,7 +7,7 @@ public class FireBallBullet : Projectile
     protected override void Start()
     {
         base.Start();
-        damage = 40; 
+        damage =  20; 
         currentSpeed = speed;
         //Debug.Log("is target null " + (targetTransform == null));
     }
